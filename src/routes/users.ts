@@ -27,6 +27,7 @@ userRoute.get("/user/:id", async (req: Request, res: Response) => {
 })
 
 userRoute.post("/users", async (req: Request, res: Response) => {
+   console.log(req.body)
    const {
       first_name,
       last_name,
