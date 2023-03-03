@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.main = void 0;
 const express_1 = __importDefault(require("express"));
 const routes_1 = require("./routes");
+const middlewares_1 = require("./middlewares");
 const msg = () => {
     const PORT = process.env.PORT || 3000;
     console.log(`✅✅✅  App Running in Port: ${PORT} 🚀🚀🚀 💯`);
@@ -13,9 +14,8 @@ const msg = () => {
 const main = () => {
     const app = (0, express_1.default)();
     const port = process.env.PORT || 3000;
-    if (process.env.NODE_ENV !== "test") {
-        app.listen(port, msg);
-    }
+    app.listen(port, msg);
+    middlewares_1.middlewares.defaultMiddleware(app);
     app.get("/", routes_1.routes.Home);
     app.use("/api", routes_1.routes.user);
     app.get("*", routes_1.routes.NotFound);

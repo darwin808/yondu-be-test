@@ -37,6 +37,7 @@ userRoute.get("/user/:id", (req, res) => __awaiter(void 0, void 0, void 0, funct
     }
 }));
 userRoute.post("/users", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log(req.body);
     const { first_name, last_name, address, postcode, phone_number, email, username, password, active, } = req.body;
     try {
         const users = yield prisma.user.create({

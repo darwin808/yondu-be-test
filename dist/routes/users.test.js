@@ -17,7 +17,7 @@ const index_1 = require("../index");
 describe("Post Endpoints", () => {
     it("should create a new post", () => __awaiter(void 0, void 0, void 0, function* () {
         console.log(index_1.main);
-        const res = yield (0, supertest_1.default)(index_1.main).get("/api/users");
+        const res = yield (0, supertest_1.default)(index_1.main).get("/");
         console.log(res);
     }));
 });
