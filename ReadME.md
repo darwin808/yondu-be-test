@@ -21,6 +21,7 @@ const body = {
       "email":"email@rjwljr.com",
       "username":"uiuuuu",
       "password":"123123"
+      'active':true
 }
 
 http://localhost:3000/api/users
